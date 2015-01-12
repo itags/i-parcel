@@ -24,6 +24,9 @@
         "i-parcel"
     ],
     "main": "i-parcel.js",
+    "browserify": {
+        "transform": ["cssify"]
+    },
     "engines": {
         "node": "*"
     },
