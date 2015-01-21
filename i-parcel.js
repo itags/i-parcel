@@ -11,6 +11,10 @@ module.exports = function (window) {
         e.target.setAttr('value', 'I am clicked i-parcel-userdata!');
     }, 'i-parcel-userdata');
 
+    var itagName = 'i-parcel';
+
+    // window.ITAGS[itagName] || window.document.createItag(itagName);
+
     itagsCore.defineParcel(
         'userdata',
         function() {
