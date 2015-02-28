@@ -21,7 +21,9 @@
         "custom element",
         "custom",
         "element",
-        "i-parcel"
+        "i-parcel",
+        "parcel",
+        "view"
     ],
     "main": "i-parcel.js",
     "browserify": {
