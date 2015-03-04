@@ -4,12 +4,11 @@ module.exports = function (window) {
     var itagCore = require('itags.core')(window),
         itagName = 'i-parcel', // <-- define your own itag-name here
         DOCUMENT = window.document,
-        ITSA = window.ITSA,
         Itag;
 
     if (!window.ITAGS[itagName]) {
         Itag = DOCUMENT.createItag(itagName, {
-            init: {
+            init: function() {
                 var element = this,
                     designNode = element.getItagContainer(),
                     content = designNode.getHTML();
