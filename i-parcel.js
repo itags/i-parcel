@@ -7,7 +7,7 @@ module.exports = function (window) {
         Itag;
 
     if (!window.ITAGS[itagName]) {
-        Itag = DOCUMENT.createItag(itagName, {
+        Itag = DOCUMENT.defineItag(itagName, {
             init: function() {
                 var element = this,
                     designNode = element.getItagContainer(),
