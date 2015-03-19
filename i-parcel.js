@@ -3,7 +3,7 @@ module.exports = function (window) {
 
     var itagCore = require('itags.core')(window),
         itagName = 'i-parcel', // <-- define your own itag-name here
-        microtemplate = require('micro-template').template,
+        microtemplate = require('./lib/microtemplate.js'),
         DOCUMENT = window.document,
         Itag;
 
@@ -22,13 +22,21 @@ module.exports = function (window) {
                 template = template.replaceAll('template', '')
                                    .replaceAll('&lt;', '<')
                                    .replaceAll('&gt;', '>');
-console.warn(template);
                 element.defineWhenUndefined('template', template);
             },
             sync: function() {
                 var element = this,
-                    model = element.model;
-                element.setHTML(microtemplate(model.template, model));
+                    model = element.model,
+                    template = model.template;
+                if (template.indexOf('<%')!==-1) {
+                    element.setHTML(microtemplate(template, model));
+                }
+                else if (/{\S+}/.test(template)) {
+                    element.setHTML(template.substitute(model));
+                }
+                else {
+                    element.setHTML(template);
+                }
             }
         });
         itagCore.setContentVisibility(Itag, true);
