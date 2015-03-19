@@ -33,6 +33,7 @@
         "node": "*"
     },
     "dependencies": {
+        "micro-template": "^0.1.2",
         "itags.core": "itags/core"
     },
     "devDependencies": {
