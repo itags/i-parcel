@@ -30,6 +30,7 @@
         "transform": ["cssify"]
     },
     "directories": {
+        "css": "./css",
         "lib": "./lib"
     },
     "engines": {
