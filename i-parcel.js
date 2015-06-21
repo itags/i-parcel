@@ -42,6 +42,7 @@ module.exports = function (window) {
             }
         });
         itagCore.setContentVisibility(Itag, true);
+        itagCore.setLazyBinding(Itag, true);
         window.ITAGS[itagName] = Itag;
     }
 
